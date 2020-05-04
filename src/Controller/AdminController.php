@@ -34,9 +34,7 @@ class AdminController extends EasyAdminController
     {
         $subject = isset($arguments['entity']) ? $arguments['entity'] : null;
 
-        if ($subject instanceof User
-            && in_array($eventName, [EasyAdminEvents::PRE_PERSIST, EasyAdminEvents::PRE_UPDATE])
-        ) {
+        if ($subject instanceof User && in_array($eventName, [EasyAdminEvents::PRE_PERSIST, EasyAdminEvents::PRE_UPDATE])) {
             $user = $this->request->request->get('user');
             $password = $user['password'];
 

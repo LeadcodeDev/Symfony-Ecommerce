@@ -1,0 +1,24 @@
+<title>{% block title %}{% endblock %}	• {{ config.label }}</title>
+<meta charSet="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<link rel="shortcut icon" href={{ asset('assets/img/favicon.ico') }} type="image/png"/>
+<link rel="image_src" href={{ config.image }} />
+
+<meta name="description" content={{ config.describes }} />
+<meta name="keywords" content={process.env.KEYWORDS} />
+<meta name="author" content={process.env.AUTHOR} />
+<meta name="copyright" content={process.env.COPYRIGHT} />
+<meta itemProp="image" content={image} />
+<meta name="twitter:card" content={image} />
+<meta name="twitter:site" content={process.env.TWITTER_TAG} />
+<meta name="twitter:title" content={title + process.env.BASE_TITLE} />
+<meta name="twitter:description" content={describe} />
+<meta name="twitter:image:src" content={image} />
+
+<meta property="og:title" content={title + process.env.BASE_TITLE} />
+<meta property="og:url" content={process.env.DOMAIN} />
+<meta property="og:image" content={image} />
+<meta property="og:description" content={describe} />
+<meta property="og:site_name" content={process.env.WEBSITE_NAME} />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content={process.env.LANG} />

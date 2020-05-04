@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+<style>
+    .navbar {
+        background-color: #212529 !important;
+        position: sticky;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <section class="page-section bg-light" id="products">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{{ app.user.fullName }}</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart %}
+                            <tr>
+                                <td>{{ item.product.label }}</td>
+                                <td>{{ item.product.formattedPrice }}</td>
+                                <td>{{ item.amount }}</td>
+                                <td>{{ item.product.price * item.amount }} €</td>
+                                <td class="text-right">
+                                    <a href={{ path('cart_remove', { id: item.product.id }) }} class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">Aucun article dans votre panier</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right">Total :</td>
+                            <td>{{ total }} €</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                  </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

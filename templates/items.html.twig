@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .navbar {
+        background-color: #212529 !important;
+        position: sticky;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+    <div class="mx-auto w-75 py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-fluid" src={{ asset('assets/img/products/01-thumbnail.jpg') }} alt="" />
+            </div>
+            <div class="col-md-8">
+                <h1 class="display-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                <p class="lead">Prix</p>
+                <p class="text-secondary pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit debitis odio sint, nisi tenetur laboriosam quibusdam illum at provident, nihil minima maiores? Suscipit ea molestiae ex sit consectetur porro?</p>
+                <p class="text-secondary pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit debitis odio sint, nisi tenetur laboriosam quibusdam illum at provident, nihil minima maiores? Suscipit ea molestiae ex sit consectetur porro?</p>
+                <p class="text-secondary pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit debitis odio sint, nisi tenetur laboriosam quibusdam illum at provident, nihil minima maiores? Suscipit ea molestiae ex sit consectetur porro?</p>
+                <p class="text-secondary pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit debitis odio sint, nisi tenetur laboriosam quibusdam illum at provident, nihil minima maiores? Suscipit ea molestiae ex sit consectetur porro?</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

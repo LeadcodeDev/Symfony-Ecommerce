@@ -17,7 +17,8 @@ easy_admin:
           - { property: 'slug', label: "Affichage dans l'URL" }
           - { property: 'describes', label: 'Description' }
           - { property: 'category', label: 'Catégorie parente' }
+          - { property: 'price', label: 'Prix' }
           - { property: 'isVisible', label: 'Visible de tous' }
       
       search:
-        fields: ['label', 'slug', 'category.label']
+        fields: ['label', 'slug', 'price', 'category.label']

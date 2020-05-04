@@ -16,14 +16,14 @@ class NavbarExtension extends AbstractExtension {
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('navbar', [$this, 'getNavbar'], ['is_safe' => ['html']])
+            new TwigFunction('head', [$this, 'getHead'], ['is_safe' => ['html']])
         ];
     }
 
-    public function getNavbar(): string
+    public function getHead(): string
     {
         $wbsiteConfig = $this->websiteConfigRepository->find(1);
-        return $this->twig->render('partials/navbar.html.twig', [
+        return $this->twig->render('partials/head.html.twig', [
             'config' => $wbsiteConfig
         ]);
     }

@@ -46,6 +46,11 @@ class Items
      */
     private $isVisible;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -126,5 +131,22 @@ class Items
     public function __toString()
     {
         return $this->label;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getFormattedPrice(): string
+    {
+        return "{$this->price} €";
     }
 }

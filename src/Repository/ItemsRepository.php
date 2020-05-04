@@ -18,23 +18,37 @@ class ItemsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Items::class);
     }
-
-    // /**
-    //  * @return Items[] Returns an array of Items objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    
+    /**
+     * @return void
+     */
+    public function findAllVisible()
     {
-        return $this->createQueryBuilder('i')
-            ->andWhere('i.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('i.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.isVisible = :isVisible')
+            ->setParameter('isVisible', true)
+            ->orderBy('q.id', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
+        
+    /**
+     * @param  int $limit
+     * @return void
+     */
+    public function findVisibleLimit(int $limit)
+    {
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.isVisible = :isVisible')
+            ->setParameter('isVisible', true)
+            ->setMaxResults($limit)
+            ->orderBy('q.id', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Items

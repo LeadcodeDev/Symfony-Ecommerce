@@ -1,5 +1,5 @@
 easy_admin:
-  site_name: "Nom de l'application"
+  site_name: "<a href='/'>Nom de l'application</a>"
   user:
     name_property_path: 'fullName'
     display_avatar: false
