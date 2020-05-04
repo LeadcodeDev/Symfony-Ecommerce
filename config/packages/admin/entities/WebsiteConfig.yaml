@@ -1,0 +1,28 @@
+easy_admin:
+  entities:
+    WebsiteConfig:
+      class: App\Entity\WebsiteConfig
+      list:
+        title: 'Configuration du site web'
+        max_results: 20
+        fields: 
+          - { property: 'label', label: 'Nom du site web' }
+          - { property: 'describes', label: 'Description' }
+          - { property: 'image', label: 'Image par défaut' }
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'copyright', label: 'Copyright' }
+          - { property: 'twitterTag', label: '@twitter' }
+
+        actions:
+          - { name: 'new', icon: 'plus', label: false, css_class: 'btn btn-primary' }
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+
+      form:
+        fields:
+          - { property: 'label', label: 'Intitulé' }
+          - { property: 'describes', label: 'Description' }
+          - { property: 'image', label: 'Image par défaut' }
+          - { property: 'author', label: 'Auteur' }
+          - { property: 'copyright', label: 'Copyright' }
+          - { property: 'twitterTag', label: '@twitter' }

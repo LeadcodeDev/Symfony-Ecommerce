@@ -1,0 +1,24 @@
+easy_admin:
+  entities:
+    User:
+      class: App\Entity\User
+      list:
+        title: 'Liste des utilisateurs'
+        max_results: 20
+        fields: 
+          - { property: 'lastName', label: 'Nom' }
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'email', label: 'Email' }
+
+        actions:
+          - { name: 'new', icon: 'plus', label: false, css_class: 'btn btn-primary' }
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+      
+      form:
+        fields:
+          - { property: 'firstName', label: 'Prénom' }
+          - { property: 'lastName', label: 'Nom' }
+          - { property: 'email', label: 'Email' }
+          - { property: 'password', label: "Mot de passe", type: 'password' }
+          - { property: 'describes', label: 'Biographie' }

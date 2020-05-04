@@ -1,0 +1,23 @@
+easy_admin:
+  entities:
+    Items:
+      class: App\Entity\Items
+      list:
+        title: 'Liste des items'
+        max_results: 20
+        fields: [{property: 'label', label: 'Intitulé'}, {property: 'category', label: 'Catégorie'}, {property: 'isVisible', label: 'Visible'}]
+        actions:
+          - { name: 'new', icon: 'plus', label: false, css_class: 'btn btn-primary' }
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+
+      form:
+        fields:
+          - { property: 'label', label: 'Intitulé' }
+          - { property: 'slug', label: "Affichage dans l'URL" }
+          - { property: 'describes', label: 'Description' }
+          - { property: 'category', label: 'Catégorie parente' }
+          - { property: 'isVisible', label: 'Visible de tous' }
+      
+      search:
+        fields: ['label', 'slug', 'category.label']

@@ -1,0 +1,11 @@
+easy_admin:
+  site_name: "Nom de l'application"
+  user:
+    name_property_path: 'fullName'
+    display_avatar: false
+  
+  design:
+    brand_color: '#007bff'
+    assets:
+      favicon: 'https://www.applyss.com/wp-content/uploads/2019/07/favicon.png'
+      css: ['/build/admin.css']

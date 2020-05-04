@@ -1,0 +1,14 @@
+easy_admin:
+  design:
+    menu:
+      - label: 'Configuration'
+        icon: 'gear'
+        children:
+          - {entity: 'WebsiteConfig', icon: 'user', label: 'Site web'}
+          - {entity: 'User', icon: 'user', label: 'Utilisateurs'}
+
+      - label: 'Blog'
+        icon: 'gear'
+        children:
+          - {entity: 'Category', icon: 'notes', label: 'Categories'}
+          - {entity: 'Items', icon: 'files', label: 'Articles'}

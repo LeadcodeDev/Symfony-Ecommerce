@@ -1,0 +1,29 @@
+easy_admin:
+  entities:
+    Category:
+      class: App\Entity\Category
+      list:
+        title: 'Liste des catégories'
+        max_results: 20
+        fields: ['label', 'items']
+        actions:
+          - { name: 'new', icon: 'plus', label: false, css_class: 'btn btn-primary' }
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+      
+      show:
+        fields:
+          - { property: 'label', label: 'Intitulé' }
+          - { property: 'slug', label: "Affichage dans l'URL" }
+          - { property: 'describes', label: 'Description' }
+          - { property: 'items', label: 'Items' }
+
+        actions:
+          - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
+          - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+      
+      form:
+        fields:
+          - { property: 'label', label: 'Intitulé' }
+          - { property: 'slug', label: "Affichage dans l'URL" }
+          - { property: 'describes', label: 'Description' }
