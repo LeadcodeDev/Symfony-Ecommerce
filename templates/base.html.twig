@@ -61,7 +61,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="{{ asset('assets/mail/jqBootstrapValidation.js') }}"></script>
         <script src="{{ asset('assets/mail/contact_me.js') }}"></script>
-        <script src="{{ asset('assets/js/scripts.js') }}" />
+        <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

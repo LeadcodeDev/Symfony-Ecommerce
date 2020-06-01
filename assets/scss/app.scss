@@ -1,3 +1,13 @@
 .price {
     font-size: 2rem;
 }
+.btn {
+    border: 0 !important;
+}
+
+body {
+    min-height: 70vh;
+    #cart-component {
+        min-height: 84vh;
+    }
+}

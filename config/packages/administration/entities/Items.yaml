@@ -15,9 +15,10 @@ easy_admin:
         fields:
           - { property: 'label', label: 'Intitulé' }
           - { property: 'slug', label: "Affichage dans l'URL" }
-          - { property: 'describes', label: 'Description' }
           - { property: 'category', label: 'Catégorie parente' }
+          - { property: 'describes', label: 'Description' }
           - { property: 'price', label: 'Prix' }
+          - { property: 'imageFile', label: "Image", type: 'vich_image' }
           - { property: 'isVisible', label: 'Visible de tous' }
       
       search:

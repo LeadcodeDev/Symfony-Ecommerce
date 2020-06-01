@@ -3,8 +3,10 @@ namespace App\Controller;
 
 use App\Entity\Items;
 use App\Repository\ItemsRepository;
+use App\Services\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 class ProductsController extends AbstractController
 {
@@ -27,12 +29,25 @@ class ProductsController extends AbstractController
     /**
      * @Route("/produits/{slugCategory}/{slugProduct}/{id}", name="product_detail")
      */
-    public function product(Items $product)
+    public function product(Items $item, Security $security, CartService $cartService)
     {
-        if (!$product->getIsVisible()) return $this->redirectToRoute('home');
+        if (!$item->getIsVisible()) return $this->redirectToRoute('home');
+        $isInCart = false;
+
+        if ($security->getUser()) {
+            $cart = $cartService->getFullCart();
+
+            foreach ($cart->getItems() as $product) {
+                $isInCart = $product->getItem()->getId() === $item->getId();
+                if ($product->getItem()->getId() === $item->getId()) {
+                    $isInCart = true;
+                }
+            }
+        }
 
         return $this->render('Products/product.html.twig', [
-            'product' => $product
+            'product' => $item,
+            'inCart' => $isInCart
         ]);
     }
 }

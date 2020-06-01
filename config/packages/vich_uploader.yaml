@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        items_pictures:
+            uri_prefix: /media/items/
+            upload_destination: '%kernel.project_dir%/public/media/items/'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer

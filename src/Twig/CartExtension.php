@@ -24,6 +24,6 @@ class CartExtension extends AbstractExtension {
 
     public function getCart(): string
     {
-        return $this->cartService->getFullCart() ? count($this->cartService->getFullCart()) : "";
+        return $this->cartService->getFullCart() ? $this->cartService->getTotalAmount() : "";
     }
 }
